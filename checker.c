@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ngunthor <ngunthor@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/05 14:24:53 by ngunthor          #+#    #+#             */
+/*   Updated: 2019/02/05 18:24:16 by ngunthor         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "fillit.h"
 
@@ -45,21 +56,27 @@ int 	check_blocks(char *str, int ret)
 			return (0);
 		i++;
 	}
-	if (ret == 20 && i == 20)
-		return (str[i] == '\0');
+	//if (ret == 20 && i == 20)
+	//	return (str[i] == '\0');
 	return (1);
 }
+
+
 
 int		begin_check(int fd)
 {
 	char	buff[BUFF_SIZE + 1];
 	int		ret;
 
+
 	while ((ret = read(fd, buff, BUFF_SIZE)))
 	{
+		if (!ret && temp != 20)
+			return (0);
 		buff[ret] = '\0';
 		if(!check_blocks(buff, ret) || !check_connections(buff))
 			return (0);
+		temp = ret;
 	}
 	return (1);
 }

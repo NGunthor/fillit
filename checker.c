@@ -6,7 +6,7 @@
 /*   By: ngunthor <ngunthor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 14:24:53 by ngunthor          #+#    #+#             */
-/*   Updated: 2019/02/05 18:24:16 by ngunthor         ###   ########.fr       */
+/*   Updated: 2019/02/06 17:40:30 by ngunthor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,44 @@ int 	check_blocks(char *str, int ret)
 	return (1);
 }
 
+int		make_list(t_queue *head, char *str, int num)
+{
+	t_queue 	*el;
+	int 		i;
+	int			index;
+	int			x_offset;
+	int			y_offset;
 
+	i = -1;
+	index = 0;
+	el = queue_new();
+	while (str[++i])
+	{
+		if (str[i] == '#')
+		{
+			el->x[index] = i % 5;
+			el->y[index] = i / 5;
+			//el->id != '\0' ? x_offset = el->x[0] : 0;
+			//el->id != '\0' ? y_offset = el->y[0] : 0;
+			//el->x[index] -= x_offset;
+			//el->y[index] -= y_offset;
+			el->id = 'A' + num;
+			index++;
+		}
+	}
+	push(&head, el);
+	return (1);
+}
 
-int		begin_check(int fd)
+t_queue		*begin_check(int fd)
 {
 	char	buff[BUFF_SIZE + 1];
 	int		ret;
+	int 	temp;
+	int 	i;
+	t_queue *head;
 
-
+	i = 0;
 	while ((ret = read(fd, buff, BUFF_SIZE)))
 	{
 		if (!ret && temp != 20)
@@ -77,6 +107,8 @@ int		begin_check(int fd)
 		if(!check_blocks(buff, ret) || !check_connections(buff))
 			return (0);
 		temp = ret;
+		make_list(head, buff, i);
+		i++;
 	}
-	return (1);
+	return (head);
 }

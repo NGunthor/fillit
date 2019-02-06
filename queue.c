@@ -6,63 +6,76 @@
 /*   By: ngunthor <ngunthor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 14:24:24 by ngunthor          #+#    #+#             */
-/*   Updated: 2019/02/05 18:24:16 by ngunthor         ###   ########.fr       */
+/*   Updated: 2019/02/06 17:39:08 by ngunthor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include <stdio.h>
 
-t_stack	pop(t_stack *head)
+t_queue	*pop(t_queue *head)
 {
 	t_queue		*temp;
 
 	if (!head)
 		return (NULL);
-	tmp = head;
-	head = nead->next;
-	free (tmp);
+	temp = head;
+	head = head->next;
+	free (temp);
 	return (head);
 }
 
-void	push(t_stack **head, t_stack *new)
+void	push(t_queue **head, t_queue *new)
 {
 	t_queue *now_pos;
 
-	if (!new || !begin_list)
+	if (!new || !head)
 		return ;
-	if (*begin_list == NULL)
-		*begin_list = new;
+	if (*head == NULL)
+		*head = new;
 	else
 	{
-		now_pos = *begin_list;
+		now_pos = *head;
 		while (now_pos->next)
 			now_pos = now_pos->next;
-		now_pos->next = elem;
+		now_pos->next = new;
 	}
 }
 
-t_list	*queue_new(void const *content, size_t content_size)
+void	clear_queue(t_queue **head)
+{
+	t_queue	*now_pos;
+	t_queue *temp;
+
+	now_pos = *head;
+	while (now_pos)
+	{
+		temp = now_pos;
+		now_pos = now_pos->next;
+		free (temp);
+	}
+	head = NULL;
+}
+
+t_queue		*queue_new()
 {
 	t_queue *out;
+	int 	i;
 
-	out = (t_queue*)malloc(sizeof(t_list));
+	out = (t_queue*)malloc(sizeof(t_queue));
 	if (out == NULL)
 		return (NULL);
-	if (content == NULL)
-	{
-		out->content = NULL;
-		out->content_size = 0;
-	}
 	else
 	{
-		out->content = (unsigned char*)malloc(content_size);
-		if (out->content == NULL)
+		while (i < 4)
 		{
-			free(out);
-			return (NULL);
+			out->x[i] = 0;
+			out->y[i] = 0;
+			i++;
 		}
-		out->content_size = content_size;
-		ft_memmove(out->content, content, content_size);
+		out->id = 0;
+		out->width = 0;
+		out->heigth = 0;
 	}
 	out->next = NULL;
 	return (out);

@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/ngunthor/my_git/fillit/checker.c
+fillit.h
+/Users/ngunthor/my_git/fillit/fillit.h
+
+/Users/ngunthor/my_git/fillit/fillit.h
+libft/libft.h
+/Users/ngunthor/my_git/fillit/libft/libft.h
+
+/Users/ngunthor/my_git/fillit/libft/libft.h
+stdlib.h
+-
+unistd.h
+-
+string.h
+-
+fcntl.h
+-
+stdio.h
+-
+

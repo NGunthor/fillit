@@ -6,7 +6,7 @@
 /*   By: ngunthor <ngunthor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 14:24:44 by ngunthor          #+#    #+#             */
-/*   Updated: 2019/02/05 18:24:16 by ngunthor         ###   ########.fr       */
+/*   Updated: 2019/02/06 17:40:09 by ngunthor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,6 @@
 
 # include "libft/libft.h"
 
-int 				check_blocks(char *str, int ret);
-int					begin_check(int fd);
-
-void				push(t_queue **head, t_queue *new);
-
 typedef struct		s_queue
 {
 	int				x[4];
@@ -27,7 +22,16 @@ typedef struct		s_queue
 	char			id;
 	int				width;
 	int				heigth;
-	struct s_stack	*next;
+	struct s_queue	*next;
 }					t_queue;
+
+int 				check_blocks(char *str, int ret);
+t_queue				*begin_check(int fd);
+int					make_list(t_queue *head, char *str, int num);
+
+t_queue				*queue_new();
+void				push(t_queue **head, t_queue *new);
+t_queue				*pop(t_queue *head);
+void				clear_queue(t_queue **head);
 
 #endif

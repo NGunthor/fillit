@@ -12,31 +12,35 @@
 
 #include "fillit.h"
 
+int solve(t_params params, t_tetr *tetras)
+{
+	char **map;
+
+	params.map_size = 2;
+	map = init_map(params.map_size);
+	while (1)
+	{
+
+	}
+
+}
+
 int main(int ac, char **av)
 {
-	int		fd;
-	t_queue	*list;
-	t_queue *temp;
+	int			fd;
+	t_tetr		tetrs[26];
+	t_params	params;
 
-	list = NULL;
 	/*if (ac != 2)
 	{
 		ft_putstr("usage: ./fillit filename\n");
 		return (0);
 	}*/
-	fd = open("/Users/ngunthor/my_git/fillit/examples/ok_02", O_RDONLY);
-	if (!(list = begin_check(fd)))
+	fd = open("C:\\Users\\clfdf\\Desktop\\C\\fillit\\examples\\ok_02", O_RDONLY);
+	if ((params.tetr_num = begin_check(fd, tetrs)) == 0)
 		ft_putstr("error\n");
 	else
-		ft_putstr("ok\n");
-	temp = list;
-	printf("%p\n", list);
-	while (temp)
-	{
-		printf("%c\n", temp->id);
-		temp = temp->next;
-	}
-	clear_queue(&list);
+		solve(params, tetrs);
 	close(fd);
 	return (0);
 }

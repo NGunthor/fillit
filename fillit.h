@@ -15,23 +15,28 @@
 
 # include "libft/libft.h"
 
-typedef struct		s_queue
+typedef struct		s_tetr
 {
 	int				x[4];
 	int				y[4];
 	char			id;
 	int				width;
-	int				heigth;
-	struct s_queue	*next;
-}					t_queue;
+	int				height;
+}					t_tetr;
+
+typedef struct      s_params
+{
+    int             map_size;
+    int             tetr_num;
+}                   t_params;
 
 int 				check_blocks(char *str, int ret);
-t_queue				*begin_check(int fd);
-int					make_list(t_queue *head, char *str, int num);
+int					begin_check(int fd, t_tetr *tetr);
+int					make_list(t_tetr *el, char *str, int num);
+char                **create_map(int tetr_num);
+char                **init_map(int map_size);
+void                delete_map(char **map, int map_size);
+void    rev_map
 
-t_queue				*queue_new();
-void				push(t_queue **head, t_queue *new);
-t_queue				*pop(t_queue *head);
-void				clear_queue(t_queue **head);
 
 #endif

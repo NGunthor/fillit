@@ -61,54 +61,65 @@ int 	check_blocks(char *str, int ret)
 	return (1);
 }
 
-int		make_list(t_queue *head, char *str, int num)
+
+
+int		make_list(t_tetr *el, char *str, int num)
 {
-	t_queue 	*el;
 	int 		i;
 	int			index;
 	int			x_offset;
 	int			y_offset;
+	char		c;
 
+	c = 'A' + num;
 	i = -1;
 	index = 0;
-	el = queue_new();
 	while (str[++i])
 	{
 		if (str[i] == '#')
 		{
 			el->x[index] = i % 5;
 			el->y[index] = i / 5;
-			//el->id != '\0' ? x_offset = el->x[0] : 0;
-			//el->id != '\0' ? y_offset = el->y[0] : 0;
-			//el->x[index] -= x_offset;
-			//el->y[index] -= y_offset;
-			el->id = 'A' + num;
+			x_offset = (el->id != c) ? el->x[0] : x_offset;
+			y_offset = (el->id != c) ? el->y[0] : y_offset;
+			el->x[index] -= x_offset;
+			el->y[index] -= y_offset;
+			el->id = c;
 			index++;
 		}
 	}
-	push(&head, el);
 	return (1);
 }
 
-t_queue		*begin_check(int fd)
+void	height_and_width(t_tetr *tetr)
+{
+    tetr->height = 0;
+    tetr->width = 0;
+    tetr->height = tetr->y[3] - tetr->y[0];
+    tetr->width = tetr->x[3] - tetr->x[0];
+}
+
+int		begin_check(int fd, t_tetr *tetr)
 {
 	char	buff[BUFF_SIZE + 1];
+	t_tetr	list;
 	int		ret;
 	int 	temp;
 	int 	i;
-	t_queue *head;
 
 	i = 0;
 	while ((ret = read(fd, buff, BUFF_SIZE)))
 	{
-		if (!ret && temp != 20)
+		if (ret < 20 && temp != 20)
 			return (0);
 		buff[ret] = '\0';
 		if(!check_blocks(buff, ret) || !check_connections(buff))
 			return (0);
 		temp = ret;
-		make_list(head, buff, i);
+		make_list(&list, buff, i);
+		tetr[i] = list;
+		height_and_width(&tetr[i]);
 		i++;
 	}
-	return (head);
+	return (i);
 }

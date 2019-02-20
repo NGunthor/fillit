@@ -72,5 +72,4 @@ add_executable(fillit
         libft/libft.h
         checker.c
         fillit.h
-        main.c
-        queue.c)
+        main.c map.c solver.c)

@@ -12,6 +12,7 @@ static int is_placeble(t_tetr *tetr, char **map, int x, int y)
             return (0);
         index++;
     }
+	return (1);
 }
 void    rev_map(t_tetr *tetr, char **map, int map_size)
 {
@@ -29,7 +30,7 @@ void    rev_map(t_tetr *tetr, char **map, int map_size)
             if (map[y][x] == tetr->id)
             {
                 while (index < 4)
-                    map[y + tetr->y[index]][x + tetr->x[index++]] == '.';
+                    map[y + tetr->y[index]][x + tetr->x[index++]] = '.';
                 return ;
             }
             x++;

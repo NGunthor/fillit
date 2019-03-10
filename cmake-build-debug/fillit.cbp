@@ -279,6 +279,9 @@
 		<Unit filename="C:/Users/clfdf/Desktop/C/fillit/map.c">
 			<Option target="fillit"/>
 		</Unit>
+		<Unit filename="C:/Users/clfdf/Desktop/C/fillit/print_map.c">
+			<Option target="fillit"/>
+		</Unit>
 		<Unit filename="C:/Users/clfdf/Desktop/C/fillit/solver.c">
 			<Option target="fillit"/>
 		</Unit>

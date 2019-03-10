@@ -64,6 +64,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/fillit.dir/main.c.obj"
   "CMakeFiles/fillit.dir/map.c.obj"
   "CMakeFiles/fillit.dir/solver.c.obj"
+  "CMakeFiles/fillit.dir/print_map.c.obj"
   "fillit.pdb"
   "fillit.exe"
   "fillit.exe.manifest"

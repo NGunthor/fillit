@@ -1850,6 +1850,33 @@ map.c.s:
 	$(MAKE) -f CMakeFiles\fillit.dir\build.make CMakeFiles/fillit.dir/map.c.s
 .PHONY : map.c.s
 
+print_map.obj: print_map.c.obj
+
+.PHONY : print_map.obj
+
+# target to build an object file
+print_map.c.obj:
+	$(MAKE) -f CMakeFiles\fillit.dir\build.make CMakeFiles/fillit.dir/print_map.c.obj
+.PHONY : print_map.c.obj
+
+print_map.i: print_map.c.i
+
+.PHONY : print_map.i
+
+# target to preprocess a source file
+print_map.c.i:
+	$(MAKE) -f CMakeFiles\fillit.dir\build.make CMakeFiles/fillit.dir/print_map.c.i
+.PHONY : print_map.c.i
+
+print_map.s: print_map.c.s
+
+.PHONY : print_map.s
+
+# target to generate assembly for a file
+print_map.c.s:
+	$(MAKE) -f CMakeFiles\fillit.dir\build.make CMakeFiles/fillit.dir/print_map.c.s
+.PHONY : print_map.c.s
+
 solver.obj: solver.c.obj
 
 .PHONY : solver.obj
@@ -2078,6 +2105,9 @@ help:
 	@echo ... map.obj
 	@echo ... map.i
 	@echo ... map.s
+	@echo ... print_map.obj
+	@echo ... print_map.i
+	@echo ... print_map.s
 	@echo ... solver.obj
 	@echo ... solver.i
 	@echo ... solver.s

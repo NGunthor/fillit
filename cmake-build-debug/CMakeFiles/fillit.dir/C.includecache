@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/clfdf/Desktop/C/fillit/checker.c
-fillit.h
-C:/Users/clfdf/Desktop/C/fillit/fillit.h
-
 C:/Users/clfdf/Desktop/C/fillit/fillit.h
 libft/libft.h
 C:/Users/clfdf/Desktop/C/fillit/libft/libft.h
@@ -25,14 +21,6 @@ fcntl.h
 -
 stdio.h
 -
-
-C:/Users/clfdf/Desktop/C/fillit/main.c
-fillit.h
-C:/Users/clfdf/Desktop/C/fillit/fillit.h
-
-C:/Users/clfdf/Desktop/C/fillit/map.c
-fillit.h
-C:/Users/clfdf/Desktop/C/fillit/fillit.h
 
 C:/Users/clfdf/Desktop/C/fillit/solver.c
 fillit.h

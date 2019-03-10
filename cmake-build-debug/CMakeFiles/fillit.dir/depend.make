@@ -196,6 +196,10 @@ CMakeFiles/fillit.dir/map.c.obj: ../fillit.h
 CMakeFiles/fillit.dir/map.c.obj: ../libft/libft.h
 CMakeFiles/fillit.dir/map.c.obj: ../map.c
 
+CMakeFiles/fillit.dir/print_map.c.obj: ../fillit.h
+CMakeFiles/fillit.dir/print_map.c.obj: ../libft/libft.h
+CMakeFiles/fillit.dir/print_map.c.obj: ../print_map.c
+
 CMakeFiles/fillit.dir/solver.c.obj: ../fillit.h
 CMakeFiles/fillit.dir/solver.c.obj: ../libft/libft.h
 CMakeFiles/fillit.dir/solver.c.obj: ../solver.c

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngunthor <ngunthor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/05 14:24:44 by ngunthor          #+#    #+#             */
-/*   Updated: 2019/02/06 17:40:09 by ngunthor         ###   ########.fr       */
+/*   Created: 2019/03/10 16:17:28 by ngunthor          #+#    #+#             */
+/*   Updated: 2019/03/10 16:20:31 by ngunthor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,24 @@ typedef struct		s_tetr
 	int				height;
 }					t_tetr;
 
-typedef struct      s_params
+typedef struct		s_params
 {
-    int             map_size;
-    int             tetr_num;
-}                   t_params;
+	int				map_size;
+	int				tetr_num;
+}					t_params;
 
-int 				check_blocks(char *str, int ret);
+int					check_blocks(char *str, int ret);
 int					begin_check(int fd, t_tetr *tetr);
 int					make_list(t_tetr *el, char *str, int num);
-int 				check_connections(char *str);
+int					check_connections(char *str);
 void				height_and_width(t_tetr *tetr);
-char                **create_map(int tetr_num);
-int     			is_blank(char **map, int map_size);
-char                **init_map(int map_size);
-void                delete_map(char **map, int map_size);
-void    			rev_map(t_tetr *tetr, char **map, int map_size);
-int     			place_tetr(t_tetr *tetrs, int i, char **map, t_params prms);
-int     			is_possible(t_tetr  *tetr, char **map, int x, int y);
-void                print_map(char **map, int map_size);
-
+char				**create_map(int tetr_num);
+int					is_blank(char **map, int map_size);
+char				**init_map(int map_size);
+void				delete_map(char **map, int map_size);
+void				rev_map(t_tetr *tetr, char **map, int map_size);
+int					place_tetr(t_tetr *tetrs, int i, char **map, t_params prms);
+int					is_possible(t_tetr *tetr, char **map, int x, int y);
+void				print_map(char **map, int map_size);
 
 #endif

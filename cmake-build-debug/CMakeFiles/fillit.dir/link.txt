@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\fillit.dir/objects.a
-C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\ar.exe cr CMakeFiles\fillit.dir/objects.a @CMakeFiles\fillit.dir\objects1.rsp
-C:\PROGRA~1\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\fillit.dir/objects.a -Wl,--no-whole-archive  -o fillit.exe -Wl,--out-implib,libfillit.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\fillit.dir\linklibs.rsp

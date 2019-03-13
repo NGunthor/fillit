@@ -6,7 +6,7 @@
 /*   By: ngunthor <ngunthor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/10 15:54:51 by ngunthor          #+#    #+#             */
-/*   Updated: 2019/03/10 16:05:02 by ngunthor         ###   ########.fr       */
+/*   Updated: 2019/03/13 14:22:41 by ngunthor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int				place_tetr(t_tetr *tetrs, int i, char **map, t_params prms)
 			}
 		}
 	}
-	if (i < prms.tetr_num && !done)
+	if (i < prms.tetr_num)
 		rev_map(&tetrs[i - 1], map, prms.map_size);
 	else
 		return (1);
